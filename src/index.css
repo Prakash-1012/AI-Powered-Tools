@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@tailwind utilities;
+ html,body,#root{
+    overflow-x: hidden;
+  }
+
+  .animate-spin{
+    animation: spin 2s linear infinite;
+  }
+   .counter-spin{
+
+    animation: counterSpin 2s linear infinite;
+  }
+@keyframes spin {
+  0%{transform: rotate(0deg);}
+  100%{ transform: rotate(360deg);}
+  }
+  @keyframes counterSpin {
+  0%{transform: rotate(0deg);}
+  100%{ transform: rotate(-360deg);}
+  }
+
+  
