@@ -11,6 +11,7 @@ function App() {
   const [summarisedText,setSummarisedText]=useState();
   const[responseStatus,setResponseStatus]=useState(true);
 
+  
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
   const genai = new GoogleGenAI({ apiKey });
   console.log(genai);
