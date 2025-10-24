@@ -2,17 +2,22 @@ import React, { useRef, useState } from 'react'
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { MdOutlineElectricBolt } from "react-icons/md";
 import { IoReloadOutline } from "react-icons/io5";
+import TextSumHeader from './TextSumHeader';
 
 const TextSum = ({ setText,callApi,summarisedText,responseStatus,setResponseStatus,setSummarisedText }) => {
     const [countWord, setCountWord] = useState(0);
     const [countChar, setCountChar] = useState(0);
     const [showMessage, setShowMessage] = useState(true);
-    const [refresh,setRefresh]=useState(false);
+    const [validation,setValidation]=useState(false);
 
     const textArea=useRef();
 
     const handleSummarize=()=>{
-
+        if(textArea.current.value==""){
+            setValidation(true)
+            return;
+        }
+        setValidation(false)
         callApi();
         setResponseStatus(false);
         setShowMessage(false)
@@ -31,9 +36,12 @@ const TextSum = ({ setText,callApi,summarisedText,responseStatus,setResponseStat
         setResponseStatus(true);
         setCountChar(0);
         setCountWord(0);
+        setValidation(false)
     }
     return (
-        <div className='lg:p-10 box-border lg:flex gap-10'>
+       <>
+       <TextSumHeader/> 
+       <div className='lg:p-10 box-border lg:flex gap-10'>
             <div className='lg:w-120 lg:p-7 lg:h-screen border border-gray-900 rounded-2xl bg-gray-950/50'>
                 <div className='flex justify-between'>
                     <div className='flex items-center'>
@@ -49,10 +57,16 @@ const TextSum = ({ setText,callApi,summarisedText,responseStatus,setResponseStat
                 </div>
                 <textarea ref={textArea} onChange={handleTextArea}className="placeholder:text-gray-400 lg:w-100 border border-gray-700 rounded-2xl p-5 bg-gray-800/50 text-white lg:h-120 mt-10" type="text" placeholder='Paste or type your text here... The AI will analyze and create a concise summary for you.' />
 
+                <div className={`${validation?"text-red-500 text-md":"hidden"}`}>
+                    Text field is empty! Paste your text and try again. 
+                 </div>
+                
+                
+
                 <div className='flex items-center'>
                     <button onClick={handleSummarize} className='lg:w-85 lg:h-10 text-white bg-linear-to-r from-purple-600 lg:mt-3 to-blue-900 via-indigo-500 flex justify-center items-center cursor-pointer hover:opacity-80 rounded-xl'>
                     <MdOutlineElectricBolt className='text-white text-2xl font-semibold' />
-                    <p className='font-semibold'>Summarize</p>
+                    <p className='font-semibold ml-2'>Summarize</p>
                 </button>
                  <button onClick={handleRefresh} className='flex ml-5 border border-gray-700 bg-gray-800/50 lg:relative top-[7px] rounded-xl justify-center items-center lg:w-10 lg:h-10 cursor-pointer hover:opacity-80'>
                     <IoReloadOutline className='text-gray-500'/>
@@ -89,6 +103,7 @@ const TextSum = ({ setText,callApi,summarisedText,responseStatus,setResponseStat
                 </div>
             </div>
         </div>
+        </>
     )
 }
 
