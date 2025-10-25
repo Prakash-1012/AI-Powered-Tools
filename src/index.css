@@ -22,4 +22,21 @@
 #Image{
   display: none;
 }
+.animate-gradient{
+  background-size: 200% 200%;
+  animation: gradient 3s ease-in-out infinite;
+}
+.animate-glow{
+  animation: glow 200 ease infinite;
+}
+@keyframes gradient {
+  0%{background-position: 0% 50%;}
+  50%{background-position: 100% 50%;}
+  100%{background-position: 0% 50%;}
+}
+@keyframes glow {
+  0%{opacity:100% ;}
+  50%{opacity:50% ;}
+  100%{opacity: 100%;}
+}
   

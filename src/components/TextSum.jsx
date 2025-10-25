@@ -9,18 +9,22 @@ const TextSum = ({ setText,callApi,summarisedText,responseStatus,setResponseStat
     const [countChar, setCountChar] = useState(0);
     const [showMessage, setShowMessage] = useState(true);
     const [validation,setValidation]=useState(false);
-
+    const [showSummary,setShowSummary]=useState(false);
     const textArea=useRef();
 
-    const handleSummarize=()=>{
+    const handleSummarize=async()=>{
         if(textArea.current.value==""){
             setValidation(true)
             return;
         }
+        setShowSummary(false);
         setValidation(false)
-        callApi();
         setResponseStatus(false);
-        setShowMessage(false)
+        setShowMessage(false);
+        await callApi();
+        setShowSummary(true);
+       
+        
        
     }
     const handleTextArea=(e)=>{
@@ -55,7 +59,7 @@ const TextSum = ({ setText,callApi,summarisedText,responseStatus,setResponseStat
                         </div>
                     </div>
                 </div>
-                <textarea ref={textArea} onChange={handleTextArea}className="placeholder:text-gray-400 lg:w-100 border border-gray-700 rounded-2xl p-5 bg-gray-800/50 text-white lg:h-120 mt-10" type="text" placeholder='Paste or type your text here... The AI will analyze and create a concise summary for you.' />
+                <textarea ref={textArea} onChange={handleTextArea}className="placeholder:text-gray-400 lg:w-100 border border-gray-700 rounded-2xl p-5 bg-gray-800/50 text-gray-200 lg:h-120 mt-10" type="text" placeholder='Paste or type your text here... The AI will analyze and create a concise summary for you.' />
 
                 <div className={`${validation?"text-red-500 text-md":"hidden"}`}>
                     Text field is empty! Paste your text and try again. 
@@ -64,7 +68,7 @@ const TextSum = ({ setText,callApi,summarisedText,responseStatus,setResponseStat
                 
 
                 <div className='flex items-center'>
-                    <button onClick={handleSummarize} className='lg:w-85 lg:h-10 text-white bg-linear-to-r from-purple-600 lg:mt-3 to-blue-900 via-indigo-500 flex justify-center items-center cursor-pointer hover:opacity-80 rounded-xl'>
+                    <button onClick={handleSummarize} className='lg:w-85 lg:h-10 text-white bg-linear-to-r from-purple-600 lg:mt-3 to-blue-900 via-indigo-500 flex justify-center items-center cursor-pointer hover:opacity-80 rounded-xl animate-gradient'>
                     <MdOutlineElectricBolt className='text-white text-2xl font-semibold' />
                     <p className='font-semibold ml-2'>Summarize</p>
                 </button>
@@ -92,12 +96,12 @@ const TextSum = ({ setText,callApi,summarisedText,responseStatus,setResponseStat
 
                     <div className={`${!responseStatus?"flex justify-center items-center flex-wrap lg:w-90":"hidden"}`}>
                         <div className='w-15 h-15 rounded-full border-b-5 border-violet-500 flex mb-3 justify-center items-center animate-spin'>
-                            <MdOutlineElectricBolt className='counter-spin text-4xl rounded-full text-purple-500' />
+                            <MdOutlineElectricBolt className='counter-spin text-3xl rounded-full text-purple-500' />
                         </div>
                         <p className='text-gray-500 text-lg'>Analyzing and summarizing your text...</p>
                     </div>
 
-                    <div className={`${"border-b box-border border-gray-500"}`}>
+                    <div className={`${showSummary?"border-b box-border lg:w-110 lg:h-auto bg-violet-950/50 text-gray-200 border-gray-500 rounded-xl p-5":"hidden"}`}>
                         {summarisedText}
                     </div>
                 </div>
