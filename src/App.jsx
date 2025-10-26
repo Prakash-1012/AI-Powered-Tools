@@ -5,10 +5,12 @@ import "./index.css";
 import Logo from './components/Logo';
 import SideBar from './components/SideBar';
 import TextSum from './components/TextSum';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { Route, Routes } from 'react-router';
 import ImgCapGen from './components/ImgCapGen';
 import CodeExplainer from './components/CodeExplainer';
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 function App() {
   const [text,setText]=useState();
@@ -21,6 +23,17 @@ function App() {
   const [expCode,setExpCode]=useState();
   const [codeStatus,setCodeStatus]=useState(true);
 
+   useEffect(()=>{
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror:true,
+      offset: 150,
+    });
+  
+  }, []);
+  
+
 
 
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
@@ -28,7 +41,7 @@ function App() {
   console.log(genai);
 
   const client = new OpenAI({
-  apiKey:"sk-abcdef1234567890abcdef1234567890abcdef12", 
+  apiKey:"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", 
   dangerouslyAllowBrowser: true,
 });
 
@@ -44,7 +57,7 @@ function App() {
 
   const genCaption= async()=>{
    const response = await client.chat.completions.create({
-   model: "gpt-4o",
+   model: "gpt-5-image-mini",
    messages: [{ role: "user", content: `Read the image in the provided URL and generate a 2-3 line caption for social media post,make sure you generate only caption no extra text because i want to display the caption text on my applications' UI,:${url}` }],
 });
   
