@@ -37,7 +37,7 @@ const CodeExplainer = ({ codeStatus, setCodeStatus, setCode, codeExplain,expCode
         <>
             <CodeExpHeader />
             <div className='lg:p-10 box-border lg:flex gap-10'>
-                <div className='lg:w-120 lg:p-7 lg:h-screen border border-gray-900 rounded-2xl bg-gray-950/50'>
+                <div data-aos="zoom-in" data-aos-duration="500" className='lg:w-120 lg:p-7 lg:h-screen border border-gray-900 rounded-2xl bg-gray-950/50'>
                     <div className='flex justify-between'>
                         <div className='flex items-center'>
                             <IoMdCode className='text-cyan-400 text-3xl' />
@@ -84,7 +84,7 @@ function example(){
                     </div>
                 </div>
 
-                <div className='lg:w-120 lg:p-7 lg:h-auto border border-gray-900 rounded-2xl bg-gray-950/50 h-auto'>
+                <div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200"  className='lg:w-120 lg:p-7 lg:h-auto border border-gray-900 rounded-2xl bg-gray-950/50 h-auto'>
                     <div className='flex'>
                         <RiCodeAiLine className='text-purple-500 text-3xl font-semibold' />
                         <p className='font-semibold ml-2 text-white'>Explanation</p>

@@ -27,7 +27,6 @@ function App() {
     AOS.init({
       duration: 1000,
       once: false,
-      mirror:true,
       offset: 150,
     });
   
