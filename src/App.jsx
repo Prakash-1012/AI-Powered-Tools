@@ -41,7 +41,7 @@ function App() {
   console.log(genai);
 
   const client = new OpenAI({
-  apiKey:"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", 
+  apiKey:"",
   dangerouslyAllowBrowser: true,
 });
 
