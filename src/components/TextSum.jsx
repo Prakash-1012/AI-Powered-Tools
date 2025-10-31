@@ -45,8 +45,8 @@ const TextSum = ({ setText,callApi,summarisedText,responseStatus,setResponseStat
     return (
        <>
        <TextSumHeader/> 
-       <div className='lg:p-10 box-border lg:flex gap-10'>
-            <div data-aos="zoom-in" data-aos-duration="500"  className='lg:w-120 lg:p-7 lg:h-screen border border-gray-900 rounded-2xl bg-gray-950/50'>
+       <div className='lg:p-10 box-border w-screen h-screen justify-center lg:flex gap-10'>
+            <div data-aos="zoom-in" data-aos-duration="500"  className='lg:w-120 relative right-35 lg:p-7 lg:h-170 border border-gray-900 rounded-2xl bg-gray-950/50'>
                 <div className='flex justify-between'>
                     <div className='flex items-center'>
                         <IoDocumentTextOutline className='text-cyan-400 text-3xl' />
@@ -78,7 +78,7 @@ const TextSum = ({ setText,callApi,summarisedText,responseStatus,setResponseStat
                 </div>
             </div>
 
-            <div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200"   className='lg:w-120 lg:p-7 lg:h-screen border border-gray-900 rounded-2xl bg-gray-950/50'>
+            <div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200"   className='lg:w-120 relative right-35 lg:p-7 lg:h-170 border border-gray-900 rounded-2xl bg-gray-950/50'>
                 <div className='flex'>
                     <MdOutlineElectricBolt className='text-purple-500 text-2xl font-semibold' />
                     <p className='font-semibold ml-2 text-white'>Summary</p>

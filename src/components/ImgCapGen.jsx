@@ -62,8 +62,8 @@ const handleUpload = (e) => {
 return (
   <>
     <CapHeader />
-    <div className='lg:p-10 box-border lg:flex gap-10'>
-      <div className='lg:w-120 lg:p-7 lg:h-screen border border-gray-900 rounded-2xl bg-gray-950/50'>
+    <div className='lg:p-10 box-border w-screen h-screen justify-center lg:flex gap-10'>
+      <div className='lg:w-120 lg:p-7 lg:h-auto border relative right-35 border-gray-900 rounded-2xl bg-gray-950/50'>
         <div className='flex justify-between'>
           <div className='flex items-center'>
             <CiImageOn className='text-cyan-400 text-3xl' />
@@ -100,7 +100,7 @@ return (
         </div>
       </div>
 
-      <div className='lg:w-120 lg:p-7 lg:h-screen border border-gray-900 rounded-2xl bg-gray-950/50'>
+      <div className='lg:w-120 lg:p-7 relative right-35 lg:h-auto border border-gray-900 rounded-2xl bg-gray-950/50'>
         <div className='flex'>
           <PiStarFour className='text-purple-500 text-2xl font-semibold' />
           <p className='font-semibold ml-2 text-white'>Generated Caption</p>
