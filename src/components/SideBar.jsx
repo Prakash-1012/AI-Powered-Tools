@@ -13,7 +13,7 @@ const SideBar = () => {
     const[focus2,setFocus2]=useState(false);
     const[focus3,setFocus3]=useState(false);
     return (
-        <div className='lg:w-70 border p-5 border-purple-950/40 lg:h-[994px] flex flex-col justify-between bg-gray-950/50'>
+        <div className='lg:w-70 border p-5 border-purple-950/40 lg:h-full flex flex-col justify-between bg-gray-950/50 max-lg:hidden'>
             <div>
                 <Link data-aos="fade-right" data-aos-duration="500" to="/" defaultChecked={true} onClick={()=>{setFocusHome(true);setFocus1(false);setFocus2(false);setFocus3(false)}} className={`flex items-center p-2 w-60 h-20 rounded-2xl border border-gray-700 ${focusHome?"bg-linear-to-r from-purple-600 to-blue-900 via-indigo-500":"bg-gray-900/30 hover:opacity-80"} transition-all  duration-75 ease-in-out lg:mb-3 animate-gradient`}>
                 <AiOutlineHome className='text-gray-300 text-2xl' />
