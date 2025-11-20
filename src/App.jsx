@@ -75,7 +75,7 @@ function App() {
     alert("Explanation of code is generated");
   }
   return (
-    <div className='w-screen h-full bg-linear-to-br lg:flex  from-gray-950 via-violet-950 to-gray-900'>
+    <div className='w-screen h-full bg-linear-to-br lg:flex from-gray-950 via-violet-950 to-gray-900'>
      <div className='lg:w-70'>
        <Logo/>
        <SideBar/>
@@ -83,7 +83,7 @@ function App() {
      </div>
       <main>
         <Routes>
-          <Route path='/' element={<Home/>}/>
+          <Route path='/' element={<TextSum/>}/>
           <Route path='/components/TextSum' element={<TextSum setResponseStatus={setResponseStatus} responseStatus={responseStatus} text={text} summarisedText={summarisedText} setText={setText} callApi={callApi} setSummarisedText={setSummarisedText}/>}/>
           <Route path='/components/ImgCapGen' element={<ImgCapGen genCaption={genCaption} caption={caption} setURL={setURL}/>}/>
           <Route path='/components/CodeExplainer' element={<CodeExplainer codeStatus={codeStatus} setCodeStatus={setCodeStatus} setCode={setCode} codeExplain={codeExplain} expCode={expCode} setExpCode={setExpCode}/>}/>

@@ -18,7 +18,7 @@ const Home = () => {
       <HomeHeader />
       <div className='lg:w-screen h-full lg:flex max-lg:text-center justify-center'>
         <div className="w-150" >
-          <div className='flex lg:w-70 max-lg:w-70 lg:h-13 max-lg:h-13 border-2 border-violet-900/80 bg-violet-900/20 rounded-full justify-center items-center mt-10 max-lg:relative max-lg:left-15'>
+          <div className='flex lg:w-70 max-lg:w-60 lg:h-13 max-lg:h-13 border-2 border-violet-900/80 bg-violet-900/20 rounded-full justify-center items-center mt-10 max-lg:relative max-lg:left-15'>
             <PiStarFour className='text-violet-400 ' />
             <p className='text-violet-400 ml-3 font-semibold'>Powered by Advanced AI</p>
           </div>
@@ -31,17 +31,17 @@ const Home = () => {
             </span>
             <p className='max-lg:hidden'>summarize, analyze, explain, and assist.</p>
           </div>
-          <div className='flex gap-7 mt-10'>
-            <Link to="/components/TextSum" className='mt-20 flex w-42 lg:h-13 p-2 rounded-xl bg-linear-to-r from-purple-600 to-blue-900 via-indigo-500 animate-gradient items-center hover:opacity-80'>
+          <div className='flex lg:gap-7 max-lg:relative left-10 gap-5 mt-10'>
+            <Link to="/components/TextSum" className='mt-20 flex lg:w-42  lg:h-13 p-2 rounded-xl bg-linear-to-r from-purple-600 to-blue-900 via-indigo-500 animate-gradient items-center hover:opacity-80'>
               <MdOutlineElectricBolt className='text-gray-200 text-2xl' />
-              <p className='ml-2 text-2xl text-gray-200 '>Get Started</p>
+              <p className='lg:ml-2 ml-1 lg:text-2xl text-lg text-gray-200 '>Get Started</p>
             </Link>
-            <div className='mt-20 flex w-42 lg:h-13 p-2 rounded-xl border bg-gray-800/50 border-gray-500 items-center'>
+            <div className='mt-20 flex w-35 lg:w-42 lg:h-13 p-2 rounded-xl border bg-gray-800/50 border-gray-500 items-center'>
               <LuBrain className='text-gray-400 text-2xl' />
-              <p className='ml-2 text-2xl text-gray-200 '>Learn More</p>
+              <p className='lg:ml-2 ml-1 lg:text-2xl text-lg text-gray-200 '>Learn More</p>
             </div>
           </div>
-          <div className='flex gap-20 w-400 relative right-160 justify-center mt-20'>
+          <div className='lg:flex grid grid-cols-2 gap-20 w-400 relative right-180 justify-center mt-20'>
             <div className='w-70 mt-5 h-40 border rounded-xl flex text-2xl flex-col p-3 gap-5 items-center justify-center font-semibold text-gray-200 border-violet-900/80 bg-gray-950/50'>
               <p>3+</p>
               <p className='text-gray-400'>AI Tools</p>
@@ -87,7 +87,7 @@ const Home = () => {
               </div>
               <div className='lg:h-15 flex items-center justify-between p-3 rounded-xl font-semibold text-gray-200 text-2xl hover:bg-gray-950/50 mt-25'>
                 Try Text Summarizer
-                <FaArrowRight className='opacity-80 hover:opacity-100'/>
+                <FaArrowRight className='opacity-80 hover:opacity-100' />
               </div>
             </Link>
             {/* ImgCapGen */}
@@ -115,12 +115,12 @@ const Home = () => {
               </div>
               <div className='lg:h-15 flex items-center justify-between p-3 rounded-xl font-semibold text-gray-200 text-2xl hover:bg-gray-950/50 mt-25'>
                 Try Image Captions
-                <FaArrowRight className="opacity-80"/>
+                <FaArrowRight className="opacity-80" />
               </div>
             </Link>
           </div>
 
-           <div className='grid grid-cols-2 w-370 h-150 mt-10 relative right-130'>
+          <div className='grid grid-cols-2 w-370 h-150 mt-10 relative right-130'>
             {/* Code Explainer */}
             <Link to="/components/CodeExplainer" className='w-175 h-150 bg-gray-950/50 rounded-2xl border-gray-700 border hover:border-pink-500/80 p-10 transition-all duration-150 ease-in-out'>
               <div className='flex lg:w-130 justify-center'>
@@ -129,7 +129,7 @@ const Home = () => {
                 </div>
                 <div className='text-gray-200 text-4xl ml-5 font-semibold'>Code Explainer
                   <div className='text-2xl mt-5 text-gray-400'>
-                   Get detailed explanations of code in any programming language, instantly.
+                    Get detailed explanations of code in any programming language, instantly.
                   </div>
                 </div>
               </div>
@@ -146,7 +146,7 @@ const Home = () => {
               </div>
               <div className='lg:h-15 flex items-center justify-between p-3 rounded-xl font-semibold text-gray-200 text-2xl hover:bg-gray-950/50 mt-25'>
                 Try Code Explainer
-                <FaArrowRight className='opacity-80 hover:opacity-100'/>
+                <FaArrowRight className='opacity-80 hover:opacity-100' />
               </div>
             </Link>
             {/* Chatbot */}
@@ -174,45 +174,45 @@ const Home = () => {
               </div>
               <div className='lg:h-15 flex items-center justify-between p-3 rounded-xl font-semibold text-gray-200 text-2xl hover:bg-gray-950/50 mt-25'>
                 Try AI Chatbot
-                <FaArrowRight className="opacity-80"/>
+                <FaArrowRight className="opacity-80" />
               </div>
             </Link>
           </div>
           <div className='lg:w-370 lg:h-150 p-10 flex flex-col justify-center items-center lg:relative right-130 bg-linear-to-r from-violet-900/70 to-violet-950 rounded-2xl mt-20 box-border'>
-              <div>
-                <BsStars className='text-7xl font-bold text-violet-500'/>
+            <div>
+              <BsStars className='text-7xl font-bold text-violet-500' />
+            </div>
+            <div className='text-5xl mt-10 font-light text-gray-200'>
+              Why Choose AI Toolkit
+            </div>
+            <div className='text-4xl mt-10 text-gray-400 text-center'>
+              Our cutting-edge AI technology provides accurate, fast, and reliable results for all your content processing needs.
+            </div>
+            <div className='flex gap-40'>
+              <div className='mt-10 flex flex-col gap-5 justify-center items-center'>
+                <div className='border lg:w-20 lg:h-20 rounded-xl flex justify-center items-center border-violet-900/50 bg-gray-950/50'>
+                  <MdOutlineElectricBolt className='text-5xl text-violet-500' />
+                </div>
+                <p className='text-3xl text-gray-200'>Lightning Fast</p>
+                <p className='text-2xl text-gray-400 lg:w-80 text-center'>Get results in seconds, not minutes</p>
               </div>
-              <div className='text-5xl mt-10 font-light text-gray-200'>
-                Why Choose AI Toolkit
-              </div>
-              <div className='text-4xl mt-10 text-gray-400 text-center'>
-                Our cutting-edge AI technology provides accurate, fast, and reliable results for all your content processing needs.
-              </div>
-              <div className='flex gap-40'>
-                  <div className='mt-10 flex flex-col gap-5 justify-center items-center'>
-                    <div className='border lg:w-20 lg:h-20 rounded-xl flex justify-center items-center border-violet-900/50 bg-gray-950/50'>
-                    <MdOutlineElectricBolt className='text-5xl text-violet-500'/>
-                    </div>
-                    <p className='text-3xl text-gray-200'>Lightning Fast</p>
-                    <p className='text-2xl text-gray-400 lg:w-80 text-center'>Get results in seconds, not minutes</p>
-                  </div>
 
-                  <div className='mt-10 flex flex-col gap-5 justify-center items-center'>
-                    <div className='border lg:w-20 lg:h-20 rounded-xl flex justify-center items-center border-violet-900/50 bg-gray-950/50'>
-                    <LuBrain className='text-5xl text-violet-500'/>
-                    </div>
-                    <p className='text-3xl text-gray-200'>Smart AI</p>
-                    <p className='text-2xl text-gray-400 lg:w-80 text-center'>Advanced models trained on vast datasets</p>
-                  </div>
-
-                  <div className='mt-10 flex flex-col gap-5 justify-center items-center'>
-                    <div className='border lg:w-20 lg:h-20 rounded-xl flex justify-center items-center border-violet-900/50 bg-gray-950/50'>
-                    <BsStars className='text-5xl text-violet-500'/>
-                    </div>
-                    <p className='text-3xl text-gray-200'>Easy to Use</p>
-                    <p className='text-2xl text-gray-400 lg:w-80 text-center'>Intuitive interface, no setup required</p>
-                  </div>
+              <div className='mt-10 flex flex-col gap-5 justify-center items-center'>
+                <div className='border lg:w-20 lg:h-20 rounded-xl flex justify-center items-center border-violet-900/50 bg-gray-950/50'>
+                  <LuBrain className='text-5xl text-violet-500' />
+                </div>
+                <p className='text-3xl text-gray-200'>Smart AI</p>
+                <p className='text-2xl text-gray-400 lg:w-80 text-center'>Advanced models trained on vast datasets</p>
               </div>
+
+              <div className='mt-10 flex flex-col gap-5 justify-center items-center'>
+                <div className='border lg:w-20 lg:h-20 rounded-xl flex justify-center items-center border-violet-900/50 bg-gray-950/50'>
+                  <BsStars className='text-5xl text-violet-500' />
+                </div>
+                <p className='text-3xl text-gray-200'>Easy to Use</p>
+                <p className='text-2xl text-gray-400 lg:w-80 text-center'>Intuitive interface, no setup required</p>
+              </div>
+            </div>
           </div>
           <div className='lg:w-370 lg:h-150 p-10 flex flex-col justify-center items-center lg:relative right-130 bg-linear-to-r from-violet-900/70 to-violet-950 rounded-2xl mt-20 box-border mb-20'>
             <div className='text-5xl text-gray-200'>
@@ -222,7 +222,7 @@ const Home = () => {
               Choose any tool from the sidebar or click below to start with our most popular feature.
             </div>
             <Link to="/components/TextSum" className='lg:w-310 h-20 mt-20 bg-linear-to-r from-purple-600 to-blue-900 via-indigo-500 flex justify-center items-center rounded-2xl animate-gradient hover:opacity-80 '>
-              <BsStars className='text-4xl font-bold text-white'/>
+              <BsStars className='text-4xl font-bold text-white' />
               <span className='text-white text-4xl'>Start with Text Summarizer</span>
             </Link>
           </div>
